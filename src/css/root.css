@@ -1,0 +1,23 @@
+:root {
+	--body-bg: #1F1F1F;
+	--transparent: transparent;
+	--blur: 4px;
+	--btn-size: 4rem;
+	--btn-color: #b10f23;
+	--btn-alt-color: #0FB14C;
+	--wpe-color: #72a2d8;
+}
+
+@keyframes button {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

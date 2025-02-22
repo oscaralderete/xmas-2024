@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@import './css/root.css';
+@import './css/button.css';
+
+* {
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	background-color: var(--body-bg);
+}
+
+h1,
+p {
+	font-family: "Great Vibes", serif;
+	text-align: center;
+}
+
+h1 {
+	font-size: 4rem;
+	color: var(--btn-alt-color);
+	text-shadow: 0 0 .15rem #fff;
+	margin-bottom: 1rem;
+}
+
+p {
+	font-size: 2.6rem;
+	line-height: 1.6;
+}
+
+body,
+.full,
+main {
+	width: 100vw;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	background-image: radial-gradient(var(--body-bg), var(--body-bg), #000);
+}
+
+/*
+In WPE we're developers not designers so, to avoid to deal with
+where's the right place to locate assets and other resources we
+just decided to use absolute references for background images.
+Feel free to use relative references if you have experience
+dealing with them 😜
+*/
+#app,
+main {
+	background: url(https://wpe.oscaralderete.com/felices-fiestas/img/page-bg.webp) center center no-repeat var(--transparent);
+	background-size: cover;
+	transform: scaleX(-1);
+}
+
+.blur {
+	backdrop-filter: blur(var(--blur));
+}
+
+.logo-wpe {
+	background: url(https://wpe.oscaralderete.com/felices-fiestas/img/wpe-logo.png) right 3rem bottom 3rem no-repeat;
+	background-size: 6rem auto;
+}
+
+#container {
+	background: url(https://wpe.oscaralderete.com/felices-fiestas/img/happy-new-year.svg) center 3rem no-repeat var(--transparent);
+	background-size: 20rem auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#wpe-link {
+	height: var(--btn-size);
+	width: auto;
+	position: fixed;
+	right: 3rem;
+	bottom: 2rem;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	to {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+#message {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transform: scaleX(-1);
+	background-image: radial-gradient(var(--body-bg), var(--body-bg), #000);
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: all .5s ease-in;
+
+	p {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 1.4rem;
+		animation: fadeIn .75s ease-in-out;
+
+		&.short {
+			font-size: 75%;
+			font-weight: bold;
+			color: var(--wpe-color);
+		}
+	}
+
+	img {
+		height: 2rem;
+		width: auto;
+		margin-top: 1rem;
+		animation-name: button;
+		animation-duration: 1.6s;
+		animation-iteration-count: 3;
+		animation-iteration-count: infinite;
+	}
+
+	&.active {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.progress-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+
+	>.indicator {
+		display: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		background-color: var(--btn-alt-color);
+		width: 0;
+		transition: width .5s linear;
+	}
+}
+
+.none {
+	display: none;
+}
+
+@media screen and (max-width: 35.5rem) {
+	h1 {
+		font-size: 2rem;
+		text-shadow: 0 0 .1rem #fff;
+	}
+
+	p {
+		font-size: 1.4rem;
+		line-height: 1.6;
+	}
+
+	.logo-wpe {
+		background: url(https://wpe.oscaralderete.com/felices-fiestas/img/wpe-logo.png) right 2rem bottom 2rem no-repeat;
+		background-size: 4rem auto;
+	}
+
+	#container {
+		background-size: 12em auto;
+	}
+
+	#message {
+		p {
+			font-size: 1.2rem;
+		}
+	}
+}
