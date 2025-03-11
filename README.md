@@ -1,47 +1,17 @@
-# Svelte + Vite
+# Landing Page para festividades
 
-This template should help get you started developing with Svelte in Vite.
+Aquí les compartimos el código de una landing page hecha especialmente para festividades como Navidad, Año Nuevo, aniversarios, fiestas patrias, etc.
 
-## Recommended IDE Setup
+## Características
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+Está hecha con Svelte, el framework para conocedores, tiene transiciones y alterna contenidos dinámicamente. Así que si tu fuerte no es el uso de setTimeout o setInterval aquí tienes un código que te será fácil de personalizar.
 
-## Need an official Svelte framework?
+## Antecedentes
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+En **WPE** (https://wpe.oscaralderete.com) nos especializamos en programar, nuestra tarjeta de presentación dice: **Agencia de Programación**. Pero colaboramos con algunas agencias SEO que subcontratan nuestros servicios en determinadas ocasiones. Una de ellas -de Argentina- nos solicitó a 01 semana de la Navidad que le apoyáramos para darle efectos y transiciones a una landing page hecha con ReactJS que estaba trastornando a sus 'programadores' porque no encontraban la forma de hacerla funcionar.
 
-## Technical considerations
+La clave de todo era y es el uso -en ReactJS- de setEffect(). Como nos pareció un proyecto muy simpático solicitamos el permiso a Mariano -el dueño de la agencia web- para replicarlo, él aceptó siempre y cuando no usaramos sus imágenes ni el mismo código de React; así que decidimos 'traducirla' a Svelte para hacer nuestra propia landing por fiestas de fin de año: https://wpe.oscaralderete.com/felices-fiestas, dado que el source es ridículamente simple -una aclaración, es simple si conoces los fundamentos programáticos- y podría ser de utilidad a la comunidad de programadores, hemos decidido compartirlo.
 
-**Why use this over SvelteKit?**
+> Tenemos un vídeo en YouTube que muestra la funcionalidad:
+[![Watch the video](https://img.youtube.com/vi/3fM7G923qPQ/maxresdefault.jpg)](https://youtu.be/3fM7G923qPQ)
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
